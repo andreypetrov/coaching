@@ -7,12 +7,12 @@
  */
 public class Main {
 
-
-
         public static void main(String[] args) {
-
-            System.out.println("This is trinangle");
-
+            Solution solution = new Solution();
+            int[] A = {3, 4, 5};
+            System.out.println(solution.solution(A));
+            int[] B = {1, 2, 3};
+            System.out.println(solution.solution(B));
         }
 
 }
