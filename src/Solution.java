@@ -12,7 +12,7 @@
  */
 // you can also use imports, for example:
 // import java.math.*;
-class Solution {
+class Triangle {
     public int solution(int[] A) {
         if (A.length < 3) return 0;
 
