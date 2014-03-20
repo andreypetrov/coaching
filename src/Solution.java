@@ -44,7 +44,7 @@ class Solution {
         while (i <= j) {
             while (input[i] < pivot) i++;
             while (input[j] > pivot) j--;
-            if (i<=j) {
+            if (i <= j) {
                 swap(input, i, j);
                 i++;
                 j--;
