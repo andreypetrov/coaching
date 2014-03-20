@@ -8,11 +8,11 @@
 public class Main {
 
         public static void main(String[] args) {
-            Solution solution = new Solution();
+           // Solution solution = new Solution();
             int[] A = {3, 4, 5};
-            System.out.println(solution.solution(A));
+            //.out.println(solution.solution(A));
             int[] B = {1, 2, 3};
-            System.out.println(solution.solution(B));
+            //System.out.println(solution.solution(B));
         }
 
 }
