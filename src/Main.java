@@ -8,11 +8,12 @@
 public class Main {
 
         public static void main(String[] args) {
+            Beta2010 soluton = new Beta2010();
            // Solution solution = new Solution();
-            int[] A = {3, 4, 5};
+            //int[] A = {3, 4, 5};
             //.out.println(solution.solution(A));
             int[] B = {1, 2, 3};
-            //System.out.println(solution.solution(B));
+            System.out.println(soluton.solution(B));
         }
 
 }
