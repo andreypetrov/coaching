@@ -9,6 +9,12 @@ import java.util.Scanner;
  *  *   *   *   *
  * x x x x x x x x
  *
+ * or
+ *
+ *     *
+ *   *  X
+ *  X X
+ *
  * DepthFirstSearch the tree.
  * When you reach x, backtrack. In the end
  *
