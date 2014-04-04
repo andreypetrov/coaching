@@ -16,9 +16,10 @@ public class EquiLeader {
 
     public int solution(int[] A) {
         int candidateIndex = findCandidateIndex(A);
+        if (candidateIndex == -1) return 0;
+
         int candidate = A[candidateIndex];
         int candidateCount = 0;
-        if (candidateIndex == -1) return 0;
 
         for (int i = 0; i < A.length; i++) {
             if (A[i] == candidate) candidateCount++;
