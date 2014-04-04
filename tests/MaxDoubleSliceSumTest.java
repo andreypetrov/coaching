@@ -22,13 +22,24 @@ public class MaxDoubleSliceSumTest {
     }
 
     @Test
-    public void testSolutionSimple() throws Exception {
+        public void testSolutionSimple() throws Exception {
         MaxDoubleSliceSum sliceSum = new MaxDoubleSliceSum();
 
         int[] A = {3, -2, 6, 2};
         int result = sliceSum.solution(A);
         assertEquals(6, result);
+    }
 
 
+
+
+
+    @Test
+    public void testSolution2() throws Exception {
+        MaxDoubleSliceSum sliceSum = new MaxDoubleSliceSum();
+
+        int[] A = {-1, 1, -1, 1, -1, 1, -1, 1, -1, 1};
+        int result = sliceSum.solution(A);
+        assertEquals(2, result);
     }
 }

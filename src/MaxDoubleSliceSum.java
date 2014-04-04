@@ -16,7 +16,6 @@ public class MaxDoubleSliceSum {
         int currentMin = A[1];
 
         for (int i = 2; i < A.length-1; i++) {
-            System.out.println("A[" + i + "]" + A[i]);
             if(A[i] < currentMin){
                 currentSlice = currentSlice + currentMin;
                 currentMin = A[i];
@@ -24,7 +23,6 @@ public class MaxDoubleSliceSum {
                 currentSlice = currentSlice + A[i];
             }
             currentSlice = Math.max(0, currentSlice);
-            System.out.println(currentSlice);
             maxSlice = Math.max(maxSlice, currentSlice);
         }
         return maxSlice;
