@@ -13,26 +13,31 @@
  * O(n) time, O(1) space
  */
 public class EquiLeader {
-    public int leaderIndex;
-    public int leaderCount;
-    public int leader;
-
 
     public int solution(int[] A) {
-        if (!findLeaderIndex(A)) return 0;
-        int runningLeaderCount = 0;
-        int equiLeaderCount = 0;
+        int candidateIndex = findCandidateIndex(A);
+        int candidate = A[candidateIndex];
+        int candidateCount = 0;
+        if (candidateIndex == -1) return 0;
 
-        for (int i = 0; i < A.length-1; i++) {
-            if (A[i] == leader) runningLeaderCount++;
-            if (runningLeaderCount > (i + 1) / 2 && leaderCount - runningLeaderCount > (A.length - i - 1) / 2) equiLeaderCount++;
+        for (int i = 0; i < A.length; i++) {
+            if (A[i] == candidate) candidateCount++;
         }
 
+        int equiLeaderCount = 0;
+
+        if (candidateCount > A.length / 2) {   //he is a real leader
+             int runningLeaderCount = 0;
+             for (int i = 0; i < A.length-1; i++) {
+                if (A[i] == candidate) runningLeaderCount++;
+                if (runningLeaderCount > (i + 1) / 2 && candidateCount - runningLeaderCount > (A.length - i - 1) / 2) equiLeaderCount++;
+            }
+        }
         return equiLeaderCount;
     }
 
 
-    public boolean findLeaderIndex(int[] input) {
+    public int findCandidateIndex(int[] input) {
         int stackSize = 1;
 
         int stackValueIndex = 0;
@@ -46,19 +51,7 @@ public class EquiLeader {
             else stackSize--;
         }
 
-        if (stackSize > 0) {
-            int candidate = stackValue;
-            int candidateCount = 0;
-            for (int i = 0; i < input.length; i++) {
-                if (input[i] == candidate) candidateCount++;
-            }
-            if (candidateCount > input.length / 2) {
-                leaderIndex = stackValueIndex;
-                leaderCount = candidateCount;
-                leader = candidate;
-                return true;
-            }
-        }
-        return false;
+        if (stackSize > 0) return stackValueIndex;
+        else return -1;
     }
 }
