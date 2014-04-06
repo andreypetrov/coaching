@@ -35,11 +35,15 @@ public class MaxDoubleSliceSumTest {
 
 
     @Test
-    public void testSolution2() throws Exception {
+    public void testSolutionAlterating() throws Exception {
         MaxDoubleSliceSum sliceSum = new MaxDoubleSliceSum();
 
-        int[] A = {-1, 1, -1, 1, -1, 1, -1, 1, -1, 1};
+        int[] A = {-1, 1, -3, 1, -1, 2, -1, 1, -1, 1};
         int result = sliceSum.solution(A);
-        assertEquals(2, result);
+        assertEquals(3, result);
     }
+
+
+
+
 }
